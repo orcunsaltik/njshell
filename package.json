@@ -20,6 +20,8 @@
         "js"
     ],
     "dependencies": {
+        "through2": "^3.0.1",
+        "vinyl": "^2.2.0",
         "njfs": "^1.0.0"
     },
     "author": "Orçun Saltık <saltikorcun@gmail.com>",
