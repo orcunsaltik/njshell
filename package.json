@@ -1,6 +1,6 @@
 {
     "name": "njshell",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Runs shell, bash command or file and can get user defined multiple types of output ",
     "main": "main.js",
     "scripts": {
