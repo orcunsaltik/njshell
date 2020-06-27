@@ -1,0 +1,31 @@
+{
+  "name": "njshell",
+  "version": "1.0.0",
+  "description": "Runs shell, bash command or file and can get user defined multiple types of output ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orcunsaltik/njshell.git"
+  },
+  "keywords": [
+    "cmd",
+    "exec",
+    "shell",
+    "bash",
+    "file",
+    "node",
+    "js"
+  ],
+  "dependencies": {
+    "njfs": "^1.0.0"
+  },
+  "author": "Orçun Saltık <saltikorcun@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orcunsaltik/njshell/issues"
+  },
+  "homepage": "https://github.com/orcunsaltik/njshell#readme"
+}
