@@ -50,9 +50,9 @@ const exec = async (cmd, type, filename, encoding) => new Promise((res, rej) => 
         });
     });
 
-const exel = async (cmd, type, filename, encoding)  => exec(`${root()}/node_modules/.bin/${cmd}`, type, filename, encoding);
+const execLocal = async (cmd, type, filename, encoding)  => exec(`${root()}/node_modules/.bin/${cmd}`, type, filename, encoding);
 
 module.exports = {
     exec,
-    exel
+    execLocal
 };
