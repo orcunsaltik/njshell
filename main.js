@@ -1,5 +1,3 @@
-'use strict';
-
 const path     = require('path');
 const execute  = require('child_process').exec;
 const Readable = require('stream').Readable;
