@@ -19,7 +19,8 @@ npm install --save-dev njshell
 
 ## Methods
 
-1. exec(cmd, type, filename, encoding): 
+1. exec(cmd, type, filename, encoding):
+
    cmd
     Command String (required)
    type 
@@ -29,7 +30,8 @@ npm install --save-dev njshell
    encoding
     default utf-8.
 
-2. execLocal(cmd, type, filename, encoding): 
+2. execLocal(cmd, type, filename, encoding):
+
    Same as "exec" but uses npm package's local path "node_modules/.bin/..." as of executable directory. 
 
 ## Usage
