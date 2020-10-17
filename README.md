@@ -35,7 +35,7 @@ exec(cmd, type, filename, encoding):
    
    encoding
  
-    default utf-8.
+    Default utf-8.
 
 execLocal(cmd, type, filename, encoding):
 
