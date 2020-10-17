@@ -9,7 +9,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/orcunsaltik/njshell/issues)
 ![node-current](https://img.shields.io/node/v/njshell)
 
-Runs shell, bash command or file and can get user defined multiple types of output.
+Execute shell, bash command or file asynchronously from Node.js scripts and get user-definable type of output.
 
 ## Install
 

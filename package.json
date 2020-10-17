@@ -1,7 +1,7 @@
 {
     "name": "njshell",
-    "version": "1.1.1",
-    "description": "Execute shell, bash command or file asynchronously and get user-definable types of output.",
+    "version": "1.1.2",
+    "description": "Execute shell, bash command or file asynchronously and get user-definable type of output.",
     "main": "main.js",
     "scripts": {
         "lint": "eslint -c .eslintrc.js main.js --fix -o test/eslint.log -f unix",
@@ -13,11 +13,14 @@
     },
     "keywords": [
         "cmd",
-        "exec",
+        "bash",
         "shell",
         "bash",
         "file",
+        "exec",
+        "local",
         "node",
+        "modules",
         "js",
         "es6"
     ],
