@@ -9,7 +9,7 @@ const exec = async (cmd, type, filename, encoding) => new Promise((res, rej) => 
         execute(cmd, (err, stdout, stderr) => {
             
             if (err || (type === 'vinyl' && !filename)) {
-                return rej(err || 'no file name');
+                return rej(err || 'missing filename!');
             }
             
             console.log(stderr);

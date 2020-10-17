@@ -1,10 +1,11 @@
 {
     "name": "njshell",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Runs shell, bash command or file and can get user defined multiple types of output ",
     "main": "main.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "lint": "eslint -c .eslintrc.js main.js --fix -o test/eslint.log -f unix",
+        "test": "npm run lint"
     },
     "repository": {
         "type": "git",
@@ -17,17 +18,22 @@
         "bash",
         "file",
         "node",
-        "js"
+        "js",
+        "es6"
     ],
-    "dependencies": {
-        "through2": "^3.0.1",
-        "vinyl": "^2.2.0",
-        "njfs": "^1.0.0"
-    },
     "author": "Orçun Saltık <saltikorcun@gmail.com>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/orcunsaltik/njshell/issues"
     },
-    "homepage": "https://github.com/orcunsaltik/njshell#readme"
+    "homepage": "https://github.com/orcunsaltik/njshell#readme",
+    "dependencies": {
+        "through2": "^4.0.2",
+        "vinyl": "^2.2.1",
+        "njfs": "^1.2.4"
+    },
+    "devDependencies": {
+        "eslint": "^7.10.0",
+        "eslint-plugin-node": "^11.1.0"
+    }
 }
