@@ -21,6 +21,9 @@
         "js",
         "es6"
     ],
+    "engines": {
+        "node": ">= 10.22.1"
+    },
     "author": "Orçun Saltık <saltikorcun@gmail.com>",
     "license": "MIT",
     "bugs": {
