@@ -22,12 +22,19 @@ npm install --save-dev njshell
 1. exec(cmd, type, filename, encoding):
 
    cmd
+
     Command String (required)
+   
    type 
+
     Type of output: stdout(default), string, buffer, stream, vinyl.
+   
    filename
+
     Only required when type of output is "vinyl".
+   
    encoding
+ 
     default utf-8.
 
 2. execLocal(cmd, type, filename, encoding):
