@@ -1,4 +1,4 @@
-# njshell
+# Node Js Shell
 
 [![Build Status](https://travis-ci.com/orcunsaltik/njshell.svg?branch=master)](https://travis-ci.com/orcunsaltik/njshell)
 [![devDependencies Status](https://david-dm.org/orcunsaltik/njshell/dev-status.svg)](https://david-dm.org/orcunsaltik/njshell?type=dev)

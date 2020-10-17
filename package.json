@@ -1,7 +1,7 @@
 {
     "name": "njshell",
     "version": "1.1.1",
-    "description": "Runs shell, bash command or file and can get user defined multiple types of output ",
+    "description": "Execute shell, bash command or file asynchronously and get user-definable types of output.",
     "main": "main.js",
     "scripts": {
         "lint": "eslint -c .eslintrc.js main.js --fix -o test/eslint.log -f unix",
