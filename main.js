@@ -30,9 +30,9 @@ const exec = async (cmd, type, filename, encoding) => new Promise((res, rej) => 
                     break;
                 case 'vinyl':
 
-                    const buffer = Buffer.from(stdout, encoding);
-                    const vPath = path.resolve(path.basename(filename));
-                    const vFile = new Vinyl({ path: vPath, contents: buffer });
+                    var buffer = Buffer.from(stdout, encoding);
+                    var vPath = path.resolve(path.basename(filename));
+                    var vFile = new Vinyl({ path: vPath, contents: buffer });
                     
                     output = T2.obj();
                     output.push(vFile);
