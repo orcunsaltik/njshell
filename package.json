@@ -1,45 +1,53 @@
 {
-    "name": "njshell",
-    "version": "1.1.2",
-    "description": "Execute shell, bash command or file asynchronously and get user-definable type of output.",
-    "main": "main.js",
-    "scripts": {
-        "lint": "eslint -c .eslintrc.js main.js --fix -o test/eslint.log -f unix",
-        "test": "npm run lint"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/orcunsaltik/njshell.git"
-    },
-    "keywords": [
-        "cmd",
-        "bash",
-        "shell",
-        "bash",
-        "file",
-        "exec",
-        "local",
-        "node",
-        "modules",
-        "js",
-        "es6"
-    ],
-    "engines": {
-        "node": ">= 10.22.1"
-    },
-    "author": "Orçun Saltık <saltikorcun@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/orcunsaltik/njshell/issues"
-    },
-    "homepage": "https://github.com/orcunsaltik/njshell#readme",
-    "dependencies": {
-        "through2": "^4.0.2",
-        "vinyl": "^2.2.1",
-        "njfs": "^1.2.4"
-    },
-    "devDependencies": {
-        "eslint": "^7.10.0",
-        "eslint-plugin-node": "^11.1.0"
-    }
+  "name": "njshell",
+  "version": "2.0.0",
+  "description": "Execute shell commands with flexible output formats (string, buffer, stream, vinyl)",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "lint:fix": "eslint index.js --fix",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orcunsaltik/njshell.git"
+  },
+  "keywords": [
+    "shell",
+    "bash",
+    "exec",
+    "command",
+    "cmd",
+    "child_process",
+    "async",
+    "stream",
+    "vinyl",
+    "gulp",
+    "buffer",
+    "node",
+    "nodejs",
+    "javascript"
+  ],
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "author": "Orçun Saltık <saltikorcun@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orcunsaltik/njshell/issues"
+  },
+  "homepage": "https://github.com/orcunsaltik/njshell#readme",
+  "dependencies": {
+    "njfs": "^2.0.0",
+    "through2": "^4.0.2",
+    "vinyl": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^3.2.5"
+  }
 }
