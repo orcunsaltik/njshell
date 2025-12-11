@@ -1,7 +1,7 @@
 {
   "name": "njshell",
-  "version": "2.0.0",
-  "description": "Execute shell commands with flexible output formats (string, buffer, stream, vinyl)",
+  "version": "2.0.1",
+  "description": "Lightweight shell command executor for Node.js - Support for multiple output formats (string, buffer, stream, vinyl), local npm binaries, timeout controls, and Gulp integration.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
@@ -26,7 +26,10 @@
     "buffer",
     "node",
     "nodejs",
-    "javascript"
+    "javascript",
+    "shell-executor",
+    "npm-binary",
+    "command-runner"
   ],
   "engines": {
     "node": ">= 18.0.0"

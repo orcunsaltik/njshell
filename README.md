@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dt/njshell.svg)](https://www.npmjs.com/package/njshell)
 [![license](https://img.shields.io/npm/l/njshell.svg)](https://github.com/orcunsaltik/njshell/blob/master/LICENSE)
 
-> Execute shell commands with flexible output formats
+> Lightweight shell command executor for Node.js - Support for multiple output formats (string, buffer, stream, vinyl), local npm binaries, timeout controls, and Gulp integration.
 
 Lightweight utility for running shell commands from Node.js with support for multiple output types: string, buffer, stream, and vinyl (for Gulp pipelines).
 
@@ -47,12 +47,14 @@ console.log(lintResult);
 Execute a shell command with flexible output format.
 
 **Parameters:**
+
 - `command` (string) - Command to execute
 - `type` (string) - Output format: `'string'` (default), `'buffer'`, `'stream'`, or `'vinyl'`
 - `filename` (string) - Required when type is `'vinyl'`
 - `options` (object) - Execution options
 
 **Options:**
+
 - `cwd` (string) - Current working directory
 - `encoding` (string) - Output encoding (default: `'utf8'`)
 - `timeout` (number) - Timeout in milliseconds (default: `0` = no timeout)
@@ -68,6 +70,7 @@ Execute a shell command with flexible output format.
 Execute a local npm binary from `node_modules/.bin/`.
 
 **Parameters:**
+
 - `binary` (string) - Binary name (e.g., `'eslint'`, `'webpack'`)
 - `type` (string) - Output format (same as `exec`)
 - `filename` (string) - Required when type is `'vinyl'`
@@ -152,11 +155,7 @@ const gulp = require('gulp');
 
 async function buildStats() {
   // Run webpack and get stats as vinyl file
-  const vinylStream = await exec(
-    'webpack --json',
-    'vinyl',
-    'webpack-stats.json'
-  );
+  const vinylStream = await exec('webpack --json', 'vinyl', 'webpack-stats.json');
 
   return vinylStream.pipe(gulp.dest('dist'));
 }
@@ -197,13 +196,13 @@ const { exec } = require('njshell');
 
 // Set working directory
 const result = await exec('npm install', 'string', null, {
-  cwd: '/path/to/project'
+  cwd: '/path/to/project',
 });
 
 // Set timeout (5 seconds)
 try {
   await exec('long-running-command', 'string', null, {
-    timeout: 5000
+    timeout: 5000,
   });
 } catch (err) {
   console.error('Command timed out');
@@ -216,7 +215,7 @@ setTimeout(() => controller.abort(), 3000);
 
 try {
   await exec('sleep 10', 'string', null, {
-    signal: controller.signal
+    signal: controller.signal,
   });
 } catch (err) {
   console.error('Command aborted');
@@ -224,7 +223,7 @@ try {
 
 // Increase buffer size for large output
 const largeOutput = await exec('cat huge-file.txt', 'string', null, {
-  maxBuffer: 50 * 1024 * 1024 // 50MB
+  maxBuffer: 50 * 1024 * 1024, // 50MB
 });
 ```
 
@@ -267,11 +266,7 @@ async function build() {
 }
 
 async function generateDocs() {
-  const docStream = await exec(
-    'jsdoc src -r -d docs',
-    'vinyl',
-    'docs/index.html'
-  );
+  const docStream = await exec('jsdoc src -r -d docs', 'vinyl', 'docs/index.html');
   return docStream.pipe(dest('dist'));
 }
 
@@ -326,7 +321,15 @@ const vinylStream = await exec('build-output', 'vinyl', 'output.json');
 
 ## Changelog
 
-### v2.0.0 (2025)
+### v2.0.1 (2025)
+
+- 🚀 Updated config files to latest standards
+- 🚀 Improved development workflow
+- 🚀 Better code quality tools
+- 🚀 Updated SEO-friendly package description
+
+### v2.0.0 (2024)
+
 - 🚀 **BREAKING:** Requires Node.js 18+
 - 🚀 **BREAKING:** Main file renamed from `main.js` to `index.js`
 - ✨ Added execution options (cwd, timeout, maxBuffer, signal)
@@ -339,6 +342,7 @@ const vinylStream = await exec('build-output', 'vinyl', 'output.json');
 - 🔧 Updated dependencies (njfs 2.0, vinyl 3.0)
 
 ### v1.1.2 (2020)
+
 - Previous stable release
 
 ## Migration from v1.x
@@ -350,7 +354,7 @@ const result = await exec('npm --version');
 // v2.x - With options
 const result = await exec('npm --version', 'string', null, {
   cwd: '/path/to/project',
-  timeout: 5000
+  timeout: 5000,
 });
 ```
 

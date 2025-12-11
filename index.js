@@ -85,62 +85,62 @@ function exec(cmd, type = 'string', filename = null, options = {}) {
         let result;
 
         switch (type) {
-        case 'string': {
+          case 'string': {
           // Convert to UTF-8 string and trim whitespace
-          result = stdout.toString('utf8').trim();
-          break;
-        }
+            result = stdout.toString('utf8').trim();
+            break;
+          }
 
-        case 'buffer': {
+          case 'buffer': {
           // Return raw buffer
-          result = Buffer.from(stdout);
-          break;
-        }
+            result = Buffer.from(stdout);
+            break;
+          }
 
-        case 'stream': {
+          case 'stream': {
           // Create readable stream
-          const stream = new Readable({
-            read() {} // No-op read (push mode)
-          });
-          stream.push(stdout);
-          stream.push(null); // EOF
-          result = stream;
-          break;
-        }
+            const stream = new Readable({
+              read() {} // No-op read (push mode)
+            });
+            stream.push(stdout);
+            stream.push(null); // EOF
+            result = stream;
+            break;
+          }
 
-        case 'vinyl': {
+          case 'vinyl': {
           // Create vinyl file for Gulp
-          const buffer = Buffer.from(stdout);
+            const buffer = Buffer.from(stdout);
 
-          // Determine vinyl path
-          // If filename is absolute, use it; otherwise use basename
-          const vinylPath = path.isAbsolute(filename)
-            ? filename
-            : path.join(process.cwd(), filename);
+            // Determine vinyl path
+            // If filename is absolute, use it; otherwise use basename
+            const vinylPath = path.isAbsolute(filename)
+              ? filename
+              : path.join(process.cwd(), filename);
 
-          const vinylFile = new Vinyl({
-            cwd: process.cwd(),
-            base: path.dirname(vinylPath),
-            path: vinylPath,
-            contents: buffer
-          });
+            const vinylFile = new Vinyl({
+              cwd: process.cwd(),
+              base: path.dirname(vinylPath),
+              path: vinylPath,
+              contents: buffer
+            });
 
-          // Create object stream and push vinyl file
-          const vinylStream = through2.obj();
-          vinylStream.push(vinylFile);
-          vinylStream.push(null); // EOF
+            // Create object stream and push vinyl file
+            const vinylStream = through2.obj();
+            vinylStream.push(vinylFile);
+            vinylStream.push(null); // EOF
 
-          result = vinylStream;
-          break;
-        }
+            result = vinylStream;
+            break;
+          }
 
-        default: {
-          return reject(
-            new Error(
+          default: {
+            return reject(
+              new Error(
               `Unsupported output type: "${type}". Use: string, buffer, stream, or vinyl.`
-            )
-          );
-        }
+              )
+            );
+          }
         }
 
         resolve(result);
